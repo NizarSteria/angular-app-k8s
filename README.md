@@ -32,6 +32,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 docker build -t harounaouissaoui/angular-app:v1 .
 ```
 
+== RUN the image
+```console
+docker run -d -p 8080:80 harounaouissaoui/angular-app:v1
+```
+
 == Start the pod
 
 Start the pod as:
