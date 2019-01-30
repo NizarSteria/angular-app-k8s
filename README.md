@@ -25,4 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# angular-app-k8s-
+# angular-app-k8s
+== Build the image
+
+```console
+docker build -t harounaouissaoui/angular-app:v1 .
+```
+
+== Start the pod
+
+Start the pod as:
+
+```console
+kubectl create -f deployement.local.yml
+```
