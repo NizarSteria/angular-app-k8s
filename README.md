@@ -37,6 +37,13 @@ docker build -t harounaouissaoui/angular-app:v1 .
 docker run -d -p 8080:80 harounaouissaoui/angular-app:v1
 ```
 
+== Tag and push the image
+```console
+docker login
+docker tag harounaouissaoui/angular-app:v1 angular-app
+docker push YOUR_DOCKERHUB_NAME/angular-app
+```
+
 == Start the pod
 
 Start the pod as:
