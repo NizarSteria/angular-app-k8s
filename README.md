@@ -51,6 +51,15 @@ Start the pod as:
 ```console
 kubectl create -f deployment.local.yaml
 ```
+== deployment and service created
+deployment.apps "angular-deployment" created
+service "angular-service" created
+```console 
+kubectl get pods
+kubectl get deployments
+minikube service angular-service
+```
+
 == Result building the image
 Harouns-MacBook-Pro:angular-app-k8s harounconsulting$ docker build -t harounaouissaoui/angular-app:v1 .
 Sending build context to Docker daemon    316MB
@@ -122,14 +131,6 @@ Removing intermediate container 8d63e15f05b4
 kubectl create -f deployment.local.yaml
 ```
 
-deployment.apps "angular-deployment" created
-service "angular-service" created
-```console 
-kubectl get pods
-kubectl get deployments
-minikube service angular-service
-
-```
 NAME                                  READY     STATUS              RESTARTS   AGE
 angular-deployment-865f65d6cf-b7cc7   0/1       ContainerCreating   0          17h
 angular-deployment-865f65d6cf-hktrg   0/1       ContainerCreating   0          17h
