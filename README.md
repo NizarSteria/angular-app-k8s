@@ -49,7 +49,7 @@ docker push YOUR_DOCKERHUB_NAME/angular-app
 Start the pod as:
 
 ```console
-kubectl create -f deployement.local.yml
+kubectl create -f deployment.local.yaml
 ```
 == Result building the image
 Harouns-MacBook-Pro:angular-app-k8s harounconsulting$ docker build -t harounaouissaoui/angular-app:v1 .
@@ -115,3 +115,28 @@ chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
 chunk {vendor} vendor.js, vendor.js.map (vendor) 3.43 MB [initial] [rendered]
 Removing intermediate container 8d63e15f05b4
  ---> f5f27796a3c1
+
+== Result k8s
+
+```console 
+kubectl create -f deployment.local.yaml
+```
+
+deployment.apps "angular-deployment" created
+service "angular-service" created
+```console 
+kubectl get pods
+kubectl get deployments
+minikube service angular-service
+
+```
+NAME                                  READY     STATUS              RESTARTS   AGE
+angular-deployment-865f65d6cf-b7cc7   0/1       ContainerCreating   0          17h
+angular-deployment-865f65d6cf-hktrg   0/1       ContainerCreating   0          17h
+angular-deployment-865f65d6cf-w4n9m   0/1       ContainerCreating   0          17h
+angular-deployment-865f65d6cf-xwvhb   0/1       ContainerCreating   0          17h
+angular-deployment-865f65d6cf-zc7wz   0/1       ContainerCreating   0          17h
+
+
+== Reference : Minikube 
+http://www.openkb.info/2018/10/minikube-cheat-sheet.html
