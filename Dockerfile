@@ -3,6 +3,9 @@ FROM node:latest as node
 WORKDIR /app
 COPY . .
 RUN npm install
+RUN node --version
+RUN npm --version
+RUN npm rebuild node-sass
 RUN npm run build --prod
 
 # stage 2
